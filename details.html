@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article Details</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="details.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@xenova/transformers"></script>
+</head>
+<style>
+  /* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container for Article Details */
+.container {
+  max-width: 95%;
+  margin: 10px auto;
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-top: 15px;
+}
+
+/* Article Image */
+#article-image {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Article Description & Content */
+p {
+  font-size: 1.1rem;
+  text-align: justify;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+/* Buttons */
+button {
+  display: block;
+  width: 95%;
+  padding: 12px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  margin: 10px auto;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Drop-down for Language Selection */
+#language-select {
+  width: 95%;
+  padding: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Dark Mode Support */
+.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+
+.dark-mode .container {
+  background: #1e1e1e;
+}
+
+.dark-mode button {
+  background-color: #ffcc00;
+  color: black;
+}
+
+/* Responsive Design for Mobile Screens */
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+  }
+  
+  p {
+    font-size: 1rem;
+  }
+  
+  button {
+    font-size: 1.1rem;
+    padding: 10px;
+  }
+  
+  #article-image {
+    max-height: 200px;
+  }
+}</style>
+<body>
+  <div class="container">
+    <h1 id="article-title"></h1>
+    <img id="article-image" src="" alt="Article Image">
+    <p id="article-description"></p>
+    <p id="article-content"></p>
+    <a id="article-link" href="" target="_blank">Read Full Article</a>
+
+    <h2>📝 AI Summary</h2>
+    <button onclick="summarizeArticle()">🔍 AI Summarize</button>
+<p id="summary-output"></p>
+    <p id="summary-output">No summary yet.</p>
+    <button onclick="summarizeArticle()">Summarize</button>
+
+    <h2>🌎 Translate</h2>
+    <select id="language-select">
+      <option value="en">English</option>
+      <option value="hi">Hindi</option>
+    </select>
+    <select id="language-select">
+    <option value="en">English</option>
+    <option value="hi">Hindi</option>
+    <option value="es">Spanish</option>
+    <option value="fr">French</option>
+</select>
+    <button onclick="translateArticle()">Translate</button>
+    <p id="translated-output"></p>
+
+    <h2>🔊 Read Aloud</h2>
+    <button onclick="readAloud()">Listen</button>
+
+    <h2>📢 Auto-Publish</h2>
+    <button onclick="publishToBlog()">Publish on Blog</button>
+
+    <h2>🔗 Share</h2>
+    <button onclick="shareOnWhatsApp()">WhatsApp</button>
+    <button onclick="shareOnTwitter()">Twitter</button>
+    <button onclick="shareOnFacebook()">Facebook</button>
+  </div>
+</body>
+</html>

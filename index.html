@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>News AI Agent </title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>News-AI-Agent</h1>
+
+    <!-- Topic Input -->
+    <input type="text" id="news-topic" placeholder="Enter topic (e.g., AI, Sports)">
+    <button id="fetch-news">Fetch News</button>
+    <button id="video-news-button">Show Video News</button>
+
+    <!-- Latest News Section -->
+    <h2> Latest News</h2>
+    <div id="news-container"></div>
+
+    <!-- Video News Section -->
+    <h2> Video News</h2>
+    <div id="video-container" class="hidden"></div>
+
+    <!-- AI Summary Section -->
+    <h2> AI Summary</h2>
+    <p id="summary-output">No summary yet.</p>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle"> Toggle Dark Mode</button>
+  </div>
+</body>
+</html>
