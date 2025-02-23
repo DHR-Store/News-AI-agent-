@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let isFetching = false;
 
     // Secure API Keys (Move these to backend for security)
-    const NEWS_API_KEY = "c1cb9b2e0106472fa6d18ecea65c18c6";
+    const NEWS_API_KEY = "9d8f46a7e3fc4f91ac54ad4409bca0d1";
     const YOUTUBE_API_KEY = "AIzaSyD_nIPQldNLjCwQc8cl-ggMUYHfbj21u2g";
 
     // Fetch News Articles
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let isFetching = false;
 
     // Secure API Keys (These should be stored in backend)
-    const NEWS_API_KEY = "c1cb9b2e0106472fa6d18ecea65c18c6"; 
+    const NEWS_API_KEY = "9d8f46a7e3fc4f91ac54ad4409bca0d1"; 
     const YOUTUBE_API_KEY = "AIzaSyD_nIPQldNLjCwQc8cl-ggMUYHfbj21u2g"; 
 
     // Fetch News Articles (Text News)
@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let isFetching = false;
 
     // Secure API Keys (Move these to backend for security)
-    const NEWS_API_KEY = "c1cb9b2e0106472fa6d18ecea65c18c6";
+    const NEWS_API_KEY = "9d8f46a7e3fc4f91ac54ad4409bca0d1";
     const YOUTUBE_API_KEY = "AIzaSyD_nIPQldNLjCwQc8cl-ggMUYHfbj21u2g";
 
     // **Fetch News Articles**
