@@ -134,7 +134,7 @@ async function fetchVideoNews(loadMore = false) {
         document.getElementById('video-container').style.display = "flex";
     }
 
-    let videoUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(currentTopic)}+news&type=video&maxResults=5&pageToken=${videoPage}&key=AIzaSyD5pdTrhUdSQGCjrLoErNTUWZK4MNvqK7g`;
+    let videoUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(currentTopic)}+news&type=video&maxResults=5&pageToken=${videoPage}&key=AIzaSyA_bMWOY4i40vd6u7eMt4RnJn_9B48lgM8`;
 
     try {
         let response = await fetch(videoUrl);
