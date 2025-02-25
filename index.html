@@ -8,6 +8,13 @@
 </head>
 <body>
     <button id="theme-toggle">Toggle Dark Mode</button>
+     <button class="ask-ai-btn" onclick="askChatbot()"> Ask AI</button>
+
+    <!-- Full-Screen Floating Chat Window -->
+    <div class="chat-modal" id="chatModal">
+        <button class="close-btn" onclick="closeChat()" style="color: #fff;">❌</button>
+        <iframe class="chat-frame" id="chatFrame" src="aiAgent.html"></iframe>
+    </div>
 
     <h1>AI-Powered News & Video Fetcher</h1>
     
