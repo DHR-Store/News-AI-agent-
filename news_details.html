@@ -190,6 +190,45 @@ textarea:focus {
         width: 90%;
     }
 }
+
+
+      /* Full-Screen Floating Chat Window */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        .chat-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw; /* Full Width */
+            height: 100vh; /* Full Height */
+            background: rgba(0, 0, 0, 1); /* Black Background */
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Close Button */
+        .close-btn {
+            position: absolute;
+            top: 6px;
+            right: 5px;
+            width: 7px;
+            background: transparent;
+            border: none;
+            padding: 3px 8px;
+            border-radius: 0%;
+            font-size: 20px;
+            color: #fff;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Full-Screen AI Chat Iframe */
+        .chat-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
 </style>
 <body>
     <h1 id="news-title"></h1>
@@ -207,8 +246,13 @@ textarea:focus {
     <button onclick="postBlog()">Publish</button>
 
     
-    <button onclick="askChatbot()">Ask with AI</button>
-   
+       <button class="ask-ai-btn" onclick="askChatbot()">💬 Ask AI</button>
+
+    <!-- Full-Screen Floating Chat Window -->
+    <div class="chat-modal" id="chatModal">
+        <button class="close-btn" onclick="closeChat()" style="color: #fff;">❌</button>
+        <iframe class="chat-frame" id="chatFrame" src="aiAgent.html"></iframe>
+    </div>
 
     <script>
         // Load URL Parameters
@@ -245,9 +289,32 @@ textarea:focus {
             alert("Blog Published: " + blogContent);
         }
 
-        function askChatbot() {
-    window.open("aiAgent.html", "_blank"); // Opens nn.html in a new tab
-}
+        // AI Chatbot
+function askChatbot() {
+            let chatModal = document.getElementById("chatModal");
+            let chatFrame = document.getElementById("chatFrame");
+
+            chatModal.style.display = "block";
+
+            // Fix for Android Full Screen Height Issue
+            chatModal.style.height = window.innerHeight + "px";
+            chatFrame.style.height = window.innerHeight + "px";
+        }
+
+        function closeChat() {
+            document.getElementById("chatModal").style.display = "none";
+        }
+
+        // Resize Fix when Screen Changes
+        window.addEventListener("resize", () => {
+            let chatModal = document.getElementById("chatModal");
+            let chatFrame = document.getElementById("chatFrame");
+            
+            if (chatModal.style.display === "block") {
+                chatModal.style.height = window.innerHeight + "px";
+                chatFrame.style.height = window.innerHeight + "px";
+            }
+        });
 
 
         function generateAIResponse(input) {
