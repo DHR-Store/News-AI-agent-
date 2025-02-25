@@ -193,3 +193,78 @@ window.addEventListener('scroll', () => {
         }
     }
 });
+
+
+function askChatbot() {
+            let chatModal = document.getElementById("chatModal");
+            let chatFrame = document.getElementById("chatFrame");
+
+            chatModal.style.display = "block";
+
+            // Fix for Android Full Screen Height Issue
+            chatModal.style.height = window.innerHeight + "px";
+            chatFrame.style.height = window.innerHeight + "px";
+        }
+
+        function closeChat() {
+            document.getElementById("chatModal").style.display = "none";
+        }
+
+        // Resize Fix when Screen Changes
+        window.addEventListener("resize", () => {
+            let chatModal = document.getElementById("chatModal");
+            let chatFrame = document.getElementById("chatFrame");
+            
+            if (chatModal.style.display === "block") {
+                chatModal.style.height = window.innerHeight + "px";
+                chatFrame.style.height = window.innerHeight + "px";
+            }
+        });
+        
+        let isChatOpen = false; // फ्लोटिंग विंडो की स्टेट ट्रैक करने के लिए
+
+function askChatbot() {
+    let chatModal = document.getElementById("chatModal");
+    let chatFrame = document.getElementById("chatFrame");
+
+    if (isChatOpen) {
+        return; // अगर पहले से ओपन है तो दुबारा ओपन नहीं होगा
+    }
+
+    chatModal.style.display = "block";
+    chatModal.style.width = "100vw";  // पूरी स्क्रीन की चौड़ाई
+    chatModal.style.height = "100vh"; // पूरी स्क्रीन की ऊँचाई
+    chatModal.style.position = "fixed";
+    chatModal.style.top = "0";
+    chatModal.style.left = "0";
+    chatModal.style.backgroundColor = "rgba(0, 0, 0, 0.7)"; // बैकग्राउंड डार्क करने के लिए
+
+    chatFrame.style.width = "100vw";
+    chatFrame.style.height = "100vh";
+    chatFrame.style.overflow = "hidden"; // स्क्रॉल रोकने के लिए
+
+    isChatOpen = true; // स्टेट अपडेट करें
+}
+
+// फ्लोटिंग विंडो बंद करने का फंक्शन
+function closeChat() {
+    let chatModal = document.getElementById("chatModal");
+    chatModal.style.display = "none";
+    isChatOpen = false; // स्टेट अपडेट करें
+}
+
+// स्क्रीन साइज़ बदलने पर भी फुल स्क्रीन बनाए रखना
+window.addEventListener("resize", () => {
+    let chatModal = document.getElementById("chatModal");
+    let chatFrame = document.getElementById("chatFrame");
+
+    if (chatModal.style.display === "block") {
+        chatModal.style.width = "100vw";
+        chatModal.style.height = "100vh";
+        chatFrame.style.width = "100vw";
+        chatFrame.style.height = "100vh";
+    }
+});
+
+
+
