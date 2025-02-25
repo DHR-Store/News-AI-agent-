@@ -229,6 +229,29 @@ textarea:focus {
             height: 100%;
             border: none;
         }
+
+
+
+     .ask-ai-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 7px 7px;
+    width: 45px;
+    height: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .ask-ai-btn:hover {
+    background-color: #0056b3;
+  }
 </style>
 <body>
     <h1 id="news-title"></h1>
@@ -246,7 +269,7 @@ textarea:focus {
     <button onclick="postBlog()">Publish</button>
 
     
-       <button class="ask-ai-btn" onclick="askChatbot()">💬 Ask AI</button>
+       <button class="ask-ai-btn" onclick="askChatbot()"> Ask AI</button>
 
     <!-- Full-Screen Floating Chat Window -->
     <div class="chat-modal" id="chatModal">
