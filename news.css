@@ -172,7 +172,7 @@ button:active {
          .ask-ai-btn {
     position: fixed;
     bottom: 30px;
-    right: 20px;
+    right: 1px;
     background-color: #007bff;
     color: white;
     border: none;
