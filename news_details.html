@@ -206,10 +206,9 @@ textarea:focus {
     <textarea id="blog-content" rows="4" cols="50"></textarea>
     <button onclick="postBlog()">Publish</button>
 
-    <h2>Chat with AI</h2>
-    <input type="text" id="chat-input" placeholder="Ask something...">
-    <button onclick="askChatbot()">Ask</button>
-    <div id="chatbox"></div>
+    
+    <button onclick="askChatbot()">Ask with AI</button>
+   
 
     <script>
         // Load URL Parameters
@@ -247,21 +246,9 @@ textarea:focus {
         }
 
         function askChatbot() {
-            let userInput = document.getElementById('chat-input').value;
-            if (!userInput.trim()) return;
+    window.open("aiAgent.html", "_blank"); // Opens nn.html in a new tab
+}
 
-            let chatbox = document.getElementById('chatbox');
-            let userMessage = `<p><strong>You:</strong> ${userInput}</p>`;
-            chatbox.innerHTML += userMessage;
-
-            let aiResponse = generateAIResponse(userInput);
-            setTimeout(() => {
-                let aiMessage = `<p><strong>AI:</strong> ${aiResponse}</p>`;
-                chatbox.innerHTML += aiMessage;
-            }, 1000);
-
-            document.getElementById('chat-input').value = '';
-        }
 
         function generateAIResponse(input) {
             if (input.toLowerCase().includes("summary")) {
